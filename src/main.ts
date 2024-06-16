@@ -7,6 +7,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api/v1');
   setupSwagger(app);
-  await app.listen(3000);
+  app.enableCors({
+    origin: '*',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  });
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
