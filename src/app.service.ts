@@ -5,7 +5,7 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
 
   //Metod de prueba para testear el API
-  getHello(): string {
+  test(): string {
     return 'Welcome to NestJs';
   }
 }
